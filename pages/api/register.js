@@ -1,5 +1,4 @@
 import knex from 'knex'
-import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 import { sha3_512 } from 'js-sha3'
 dotenv.config()
