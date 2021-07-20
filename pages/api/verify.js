@@ -17,7 +17,7 @@ const db = knex({
 })
 
 export default async function HGK_API (req, res) {
-    const { Token, TokenInfo } = req.cookies
+    const { Token } = req.cookies
     const checktoken = jwt.verify(Token, process.env.SECRETHASH)
     const [user] = await db.select('*').from('users').where('username', checktoken.username)
     if (user) return res.send({ success: true, username: checktoken.username, msg: ""})
